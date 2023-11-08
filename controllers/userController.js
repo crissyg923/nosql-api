@@ -41,5 +41,41 @@ module.exports = {
         } catch (err) {
             res.status(500).json(err);
         }
-    }
+    },
+    async updateUser(req,res) {
+        try {
+            const user = await User.findOneAndUpdate(
+                {_id: req.params.iserId},
+                {$set: req.body},
+                {runValidators: true, new: true}
+            );
+
+        if(!user) {
+            res.status(404).json({ message: 'No user with this transaction' });
+        }
+
+        res.json(user);
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    },
+    async addFriend(req,res) {
+        console.log('You are adding a new friend');
+        console.log(req.body);
+
+        try {
+            const user = await User.findOneAndUpdate(
+                { _id: req.params.userId },
+                { $addToSet: { friends: req.body.userId} },
+                { runValidators: true, new: true }
+            );
+
+            if (!user) {
+                return res.status(404).json({ message: 'No student found with that ID' });
+            }
+            res.json(user);
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    },
 };
