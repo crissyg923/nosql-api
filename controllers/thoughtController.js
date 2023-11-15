@@ -33,7 +33,7 @@ module.exports = {
                 message: 'No user found with that ID.'
             })
         }
-        res.status('Thought successfully created');
+        res.status(200).json({message: 'Thought successfully created', user});
         } catch (err) {
             console.log(err);
             res.status(500).json(err);
