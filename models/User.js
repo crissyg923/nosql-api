@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
-// const thoughtSchema = require('./Thought');
 
+// Schema for creating user 
 const userSchema = new Schema(
     {
         username: {
@@ -37,7 +37,7 @@ const userSchema = new Schema(
         id: false,
     }
 );
-
+// Sets list of friends
 userSchema
     .virtual('friendlist')
     .get(function () {

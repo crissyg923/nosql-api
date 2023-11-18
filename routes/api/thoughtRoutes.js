@@ -1,4 +1,6 @@
 const router = require('express').Router();
+
+// Imports functions to execute route methods related to thoughts and reactions
 const {
     getThoughts,
     createThought,

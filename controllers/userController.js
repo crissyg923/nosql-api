@@ -1,6 +1,6 @@
-const { User, Thought } = require('../models');
+const { User } = require('../models');
 
-// get all users, user by id, post new user
+// CRUD operations for users
 module.exports = {
     async getUsers(req, res) {
         try {

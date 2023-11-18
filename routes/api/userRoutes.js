@@ -1,5 +1,6 @@
 const router = require('express').Router();
 
+// Imports functions to execute route methods related to users and friends
 const {
     getUsers,
     getSingleUser,

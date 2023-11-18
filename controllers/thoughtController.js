@@ -1,5 +1,7 @@
 const { User, Thought } = require('../models');
 
+
+// CRUD oprations for thoughts/reactions 
 module.exports = {
     async getThoughts(req,res) {
         try {
