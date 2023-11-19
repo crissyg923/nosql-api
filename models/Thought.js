@@ -14,7 +14,7 @@ const thoughtSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now
-            // Implement getter method to format timestamp
+
         },
         username: {
             type: String,
@@ -38,8 +38,7 @@ thoughtSchema
 thoughtSchema
     .path('createdAt')
     .get(function (createdAt) {
-      // Format the timestamp using any desired format (e.g., using toLocaleString())
-      return createdAt.toLocaleString(); // Adjust the formatting as per your requirement
+      return createdAt.toLocaleString(); 
     });
 
 const Thought = model('thought', thoughtSchema);
