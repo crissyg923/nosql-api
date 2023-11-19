@@ -1,7 +1,7 @@
 # nosql-api
 ![Static Badge](https://img.shields.io/badge/License-MIT-green)
 
-[]
+[Video Walkthrough](https://drive.google.com/file/d/1SpL0RiT5vWd9yIIw6uAEhn7H0hGbxEhB/view)
 ## Description
 This application was built using MongoDB to create a social networking API that utilizes CRUD operations to handle data.  It allows you to create users, add friends to the users, allows users to share thoughts, and allows other users to react to those thoughts.  It is a basic building block for a full-stack social networking application.
 
@@ -15,7 +15,7 @@ This application was built using MongoDB to create a social networking API that 
 6. [Questions](#questions)
 
 ## Installation
-Head to the [nosql-api](https://github.com/crissyg923/nosql-api) repository to clone the repo. Once in your local environment, run "npm i" to install the necessary dependencies and run npm start to start the server at a local port(default is 3001). Use an API developing app like Insomnia to test out the routes to create, read, update, and delete users and their thoughts.
+Head to the [nosql-api](https://github.com/crissyg923/nosql-api) repository to clone the repo. Once in your local environment, run **"npm i"** in the terminal to install the necessary dependencies. Then, command **"npm run seed && run npm start"** to seed the database and to start the server at a local port(default is 3001). Use an API developing app like Insomnia to test out the routes to create, read, update, and delete users along with their thoughts and add friends/reactions.
 
 ## Usage
 This application can be used as a base for creating an actual social network that allows people to share their lives with the world and devlop networks of friends and associates.
