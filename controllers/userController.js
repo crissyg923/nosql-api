@@ -33,7 +33,7 @@ module.exports = {
     },
     async deleteUser(req, res) {
         try {
-            const user = await User.findOneAndDelete({ _id: request.params.userId});
+            const user = await User.findOneAndDelete({ _id: req.params.userId});
             if (!user) {
                 return res.status(404).json({ message: 'User not found.'})
             }
@@ -45,7 +45,7 @@ module.exports = {
     async updateUser(req,res) {
         try {
             const user = await User.findOneAndUpdate(
-                {_id: req.params.iserId},
+                {_id: req.params.userId},
                 {$set: req.body},
                 {runValidators: true, new: true}
             );
@@ -83,7 +83,7 @@ module.exports = {
         
         try {
             const user = await User.findOneAndUpdate(
-                { _id: req.params._userId},
+                { _id: req.params.userId},
                 { $pull: { friends: { friendId: req.params.friendId } } },
                 { runValidators: true, new: true}
                 );
@@ -96,4 +96,5 @@ module.exports = {
             res.status(500).json(err);
         }
     },
+    
 };
